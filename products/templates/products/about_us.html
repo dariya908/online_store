@@ -1,0 +1,14 @@
+<div class="about-section">
+  <h1>About Us Page</h1>
+    <table>
+        <tr>
+          <td>Aboutus</td>
+          <td>Description</td>
+        </tr>
+        {%for product in aboutus%}
+            <tr>
+            <td>{{product.title}}</td>
+            <td>{{product.description}}</td>
+            </tr>
+        {%endfor%}
+    </table>
