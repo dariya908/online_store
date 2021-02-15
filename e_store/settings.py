@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')v$a!7gf*ymt$pr!#-3s)&-_w@)_s3w%+qpn=b+kdnq)*&@p^0'
+SECRET_KEY =config ('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +124,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 MEDIA_URL='/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
+
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_PORT=587
+EMAIL_USE_TLS= True
+EMAIL_HOST_USER=config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')

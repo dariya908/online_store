@@ -1,6 +1,9 @@
+{%extends 'products/base.html' %}
+{%block content%}
 <form method="POST" action="">
     {% csrf_token %}
     {{form}}
     <input type="submit" name="Submit">
-
+    {{total_price}}
 </form>
+{%endblock%}

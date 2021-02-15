@@ -1,0 +1,30 @@
+{%extends 'products/base.html' %}
+{%block content%}
+<table bordercolor="black" border="1" bgcolor="#FF00FF" width="100%">
+    <tr>
+        <td>Name</td>
+        <td>Second name</td>
+        <td>Phone number</td>
+        <td>E-mail</td>
+        <td>Physical address</td>
+        <td>Type</td>
+        <td>Latitude</td>
+        <td>Longtitude</td>
+    </tr>
+
+
+    {% for user in contakts %}
+    <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.second_name }}</td>
+        <td>{{ user.phonenumber }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phy_adress }}</td>
+        <td>{{ user.type }}</td>
+        <td>{{ user.latitude }}</td>
+        <td>{{ user.longtitude }}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+{%endblock%}
